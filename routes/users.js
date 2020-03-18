@@ -4,4 +4,4 @@ const loginHandler = require('../controllers/userController/loginHandler');
 /* GET users listing. */
 userRouter.post('/login', loginHandler);
 
-module.exports = router;
+module.exports = userRouter;
