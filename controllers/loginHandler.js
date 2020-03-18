@@ -1,4 +1,4 @@
-let userModel = require('../../models/user');
+let userModel = require('../models/user');
 const jwt = require("jsonwebtoken");
 
 module.exports = async (req, res)=>{

@@ -94,11 +94,11 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Running in', process.env.NODE_ENV," environment");
-  debug('Listening on ' + bind);
+  console.log('Running in', process.env.NODE_ENV," environment");
+  console.log('Listening on ' + bind);
   mongoose.Promise = global.Promise;
   mongoose.connect(process.env.MONGODBURL, mongoDbOption).then(()=>{
-    debug('Connected to database successfully');
+    console.log('Connected to database successfully');
   }).catch((err)=>{
     console.error(err);
   })
