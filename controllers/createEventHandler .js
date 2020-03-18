@@ -5,20 +5,25 @@ module.exports =  (req, res)=>{
     
     //create an event
     console.log('events endpoint')
-    let {title, description,location}= req.body;
+    let {title, description,location, startDateTime, endDateTime}= req.body;
     let files = req.files;
-    console.log(req.body);
-    console.log(req.files)
 
-    eventModel.create({title, description, location}).then((event)=>{
-        files.forEach((file) => {
-            event.pictures.push({url: file.Location})
-        });
-        event.save().then((savedEvent)=>{
-            console.log(savedEvent)
-            res.status(200).send(savedEvent)
-        })
+    let pictures = [];
+    files.forEach((file) => {
+        pictures.push({url: file.Location})
+    });
+    let event = new eventModel({
+        title,
+        description,
+        location,
+        startDateTime,
+        endDateTime,
+        pictures:pictures
+    });
+    event.save().then((savedEvent)=>{
+   
+        res.status(200).send(savedEvent)
     }).catch((err)=>{
-        console.error(err)
-    });   
+        console.error(err);
+    });
 }

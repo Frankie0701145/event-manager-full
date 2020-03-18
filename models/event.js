@@ -5,25 +5,31 @@ const Schema = mongoose.Schema;
 
 const pictureSchema = new Schema({
     url: {
-        type: String
+        type: String,
+        required: true
     }
 });
 
 const eventSchema = new Schema({
     title: {
-        type: String
+        type: String,
+        required: true
     },
     location: {
-        type: String
+        type: String,
+        required: true
     },
     description: {
-        type: String
+        type: String,
+        required: true
     },
     startDateTime: {
-        type: Date
+        type: Date,
+        required: true
     },
     endDateTime: {
-        type: Date
+        type: Date,
+        required: true
     },
     pictures: [pictureSchema]
 });
