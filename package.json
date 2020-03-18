@@ -7,6 +7,7 @@
     "dev": "DEBUG=ujumbe-api NODE_ENV=development nodemon ./bin/www"
   },
   "dependencies": {
+    "aws-sdk": "^2.641.0",
     "bcrypt": "^4.0.1",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
@@ -14,6 +15,9 @@
     "http-errors": "~1.6.3",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.5",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "multer-sharp-s3": "^0.2.0"
   }
 }
