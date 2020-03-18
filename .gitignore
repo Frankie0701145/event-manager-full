@@ -1,0 +1,5 @@
+.nvmrc
+.env
+node_modules/
+ENV="development"
+PORT=4000
