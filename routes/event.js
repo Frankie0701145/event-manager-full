@@ -1,6 +1,7 @@
 var express = require('express');
 var eventRouter = express.Router();
 const createEventHandler =  require('../controllers/createEventHandler ');
+const allEventHandler = require('../controllers/allEventHandler');
 let multer = require('multer');
 let aws = require('aws-sdk');
 let multerSharpS3 = require("multer-sharp-s3");
@@ -33,6 +34,8 @@ const uploadPowerPoint = multer({
 
 
 eventRouter.post('/create', uploadPowerPoint.array('pictures', 4),createEventHandler);
+
+eventRouter.get('/all', allEventHandler);
 
 module.exports = eventRouter;
 
