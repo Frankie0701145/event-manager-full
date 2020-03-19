@@ -14,8 +14,8 @@ app.use(express.urlencoded({ extended: false }));
 
 
 
-app.use('/users', usersRouter);
-app.use('/events', eventsRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/events', eventsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
