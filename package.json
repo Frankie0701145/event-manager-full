@@ -6,6 +6,9 @@
     "start": "node ./bin/www",
     "dev": "DEBUG=ujumbe-api NODE_ENV=development nodemon ./bin/www"
   },
+  "engines": {
+    "node": "~13.2.0"
+  },
   "dependencies": {
     "aws-sdk": "^2.641.0",
     "bcrypt": "^4.0.1",
