@@ -32,7 +32,7 @@ const eventSchema = new Schema({
         required: true
     },
     pictures: [pictureSchema]
-});
+},{timestamps: true});
 
 const Event = mongoose.model('Event', eventSchema);
 

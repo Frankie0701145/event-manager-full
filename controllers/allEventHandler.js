@@ -2,7 +2,7 @@ let eventModel = require('../models/event');
 
 module.exports = async (req, res)=>{
     try{
-        let events = await eventModel.find();
+        let events = await eventModel.find().sort({'startDateTime': 'desc'});
         res.status(200).send(events);
     }catch(err){
         console.error(err);
